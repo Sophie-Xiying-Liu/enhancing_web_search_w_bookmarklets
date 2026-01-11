@@ -1,3 +1,7 @@
+This is a project built by using Cursor.
+
+It's a course project from [Build with AI: Mindset, Habits & Tools for the Next 20 Years](https://www.superlinear.academy/c/ai/sections/334458/lessons/1240532).
+
 # Enhancing Web Search with Bookmarklets
 
 Bookmarklets to redirect Google search queries to alternative search engines (like DuckDuckGo) with optional parameter preservation.

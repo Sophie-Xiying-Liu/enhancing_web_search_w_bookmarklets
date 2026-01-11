@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Google Search - Test Page</title>
+    <style>
+      body {
+        font-family: arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #fff;
+      }
+      .header {
+        padding: 15px;
+        border-bottom: 1px solid #ebebeb;
+      }
+      .logo {
+        font-size: 20px;
+        color: #4285f4;
+        font-weight: 400;
+        margin: 0;
+      }
+      .search-container {
+        max-width: 600px;
+        margin: 30px auto;
+        padding: 0 20px;
+      }
+      .search-box {
+        border: 1px solid #dfe1e5;
+        border-radius: 24px;
+        padding: 12px 20px;
+        font-size: 16px;
+        width: 100%;
+        box-sizing: border-box;
+      }
+      .search-box:focus {
+        outline: none;
+        box-shadow: 0 2px 5px 1px rgba(64, 60, 67, 0.16);
+      }
+      .info-box {
+        background: #f8f9fa;
+        border: 1px solid #dadce0;
+        border-radius: 8px;
+        padding: 20px;
+        margin: 30px auto;
+        max-width: 600px;
+      }
+      .info-box h2 {
+        margin-top: 0;
+        color: #202124;
+        font-size: 18px;
+      }
+      .info-box p {
+        color: #5f6368;
+        line-height: 1.6;
+      }
+      .url-display {
+        background: white;
+        padding: 10px;
+        border-radius: 4px;
+        font-family: monospace;
+        font-size: 12px;
+        word-break: break-all;
+        margin: 10px 0;
+        border: 1px solid #dadce0;
+      }
+      .test-links {
+        margin: 20px 0;
+      }
+      .test-links a {
+        display: inline-block;
+        margin: 5px 10px 5px 0;
+        padding: 8px 16px;
+        background: #1a73e8;
+        color: white;
+        text-decoration: none;
+        border-radius: 4px;
+        font-size: 14px;
+      }
+      .test-links a:hover {
+        background: #1765cc;
+      }
+      .warning {
+        background: #fef7e0;
+        border-left: 4px solid #fbbc04;
+        padding: 12px 16px;
+        margin: 20px 0;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1 class="logo">Google</h1>
+    </div>
+
+    <div class="search-container">
+      <input
+        type="text"
+        class="search-box"
+        value="test search query"
+        readonly
+      />
+    </div>
+
+    <div class="info-box">
+      <h2>🧪 Bookmarklet Test Page</h2>
+      <p>
+        This page simulates a Google search results page for testing the
+        bookmarklet locally.
+      </p>
+
+      <div class="warning">
+        <strong>Note:</strong> This is a test page. The bookmarklet will detect
+        this as a Google search page based on the URL parameters.
+      </div>
+
+      <h3>Current URL Parameters:</h3>
+      <div class="url-display" id="url-display"></div>
+
+      <h3>Test Different Scenarios:</h3>
+      <div class="test-links">
+        <a href="?q=simple+search">Simple Search</a>
+        <a href="?q=test&tbs=qdr:d">With Time Filter (Past Day)</a>
+        <a href="?q=test&tbs=qdr:w&lr=lang_en">With Time & Language</a>
+        <a href="?q=test&tbm=isch">Image Search</a>
+        <a href="?q=test&num=50&safe=active">With Results Count & Safe Search</a>
+        <a href="?q=complex+search+query&tbs=qdr:m&lr=lang_en&cr=countryUS&hl=en&gl=us"
+          >All Parameters</a
+        >
+      </div>
+
+      <h3>How to Test:</h3>
+      <ol>
+        <li>Build the bookmarklet: <code>npm run build</code></li>
+        <li>Open <code>dist/duckduckgo.html</code> in your browser</li>
+        <li>Install the bookmarklet to your bookmark bar</li>
+        <li>Click one of the test links above to set URL parameters</li>
+        <li>Click the bookmarklet in your bookmark bar</li>
+        <li>The modal should appear with the detected parameters</li>
+      </ol>
+    </div>
+
+    <script>
+      // Update URL display
+      function updateUrlDisplay() {
+        const urlDisplay = document.getElementById('url-display');
+        const url = window.location.href;
+        urlDisplay.textContent = url;
+      }
+
+      // Update on load
+      updateUrlDisplay();
+
+      // Update when clicking test links
+      document.querySelectorAll('.test-links a').forEach(link => {
+        link.addEventListener('click', e => {
+          e.preventDefault();
+          window.location.href = link.href;
+        });
+      });
+
+      // Update search box value from URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const query = urlParams.get('q');
+      if (query) {
+        document.querySelector('.search-box').value = query.replace(/\+/g, ' ');
+      }
+    </script>
+  </body>
+</html>

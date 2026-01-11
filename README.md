@@ -46,13 +46,71 @@ Bookmarklets to redirect Google search queries to alternative search engines (li
 
 ## Usage
 
-1. Perform a search on Google
-2. If you're not satisfied with the results, click the bookmarklet in your bookmark bar
-3. A modal will appear showing:
-   - Your current search query
-   - Available search parameters (time filters, language, etc.)
-4. Select which parameters you want to preserve (or choose "Search query only")
-5. Click "Redirect" to open the search in DuckDuckGo in a new tab
+### Step-by-Step Guide
+
+1. **Show your bookmark bar** (if not visible):
+   - **Chrome/Edge**: Press `Ctrl+Shift+B` (Windows) or `Cmd+Shift+B` (Mac)
+   - **Firefox**: Press `Ctrl+Shift+B` (Windows) or `Cmd+Shift+B` (Mac)
+   - **Safari**: Press `Cmd+Shift+B` to show bookmarks bar
+
+2. **Perform a search on Google**:
+   - Go to [Google.com](https://www.google.com)
+   - Search for anything (e.g., "python tutorial", "machine learning")
+
+3. **Activate the bookmarklet**:
+   - Click the bookmarklet in your bookmark bar
+   - A modal will appear showing:
+     - Your current search query (read-only)
+     - Available search parameters with checkboxes (time filters, language, country, etc.)
+     - "Search query only" quick option
+
+4. **Select what to preserve**:
+   - **Option A**: Check "Search query only" to use just the search term
+   - **Option B**: Select specific parameters you want to preserve (time filters, language settings, etc.)
+
+5. **Redirect**:
+   - Click the "Redirect" button
+   - A new tab will open with your search on DuckDuckGo
+
+### Example Usage
+
+**Scenario**: You searched for "JavaScript async await" on Google but want to see DuckDuckGo's results.
+
+1. On Google search results page, click the bookmarklet
+2. Modal shows:
+   - Search Query: `JavaScript async await`
+   - Parameters: (if you used any filters)
+3. Select "Search query only" or specific parameters
+4. Click "Redirect"
+5. DuckDuckGo opens in a new tab with the same search
+
+### Testing Locally
+
+For development and testing:
+
+1. Build the bookmarklets: `npm run build`
+2. Open `test/test-page.html` in your browser
+3. Install the bookmarklet from `dist/duckduckgo.html`
+4. Click the test links on the test page to simulate different Google search scenarios
+5. Click the bookmarklet to test functionality
+
+### Troubleshooting
+
+**"This bookmarklet only works on Google search results pages"**
+
+- Make sure you're on a Google search results page (URL should contain `/search?q=...`)
+- The bookmarklet won't work on Google's homepage or other pages
+
+**Bookmarklet doesn't appear in bookmark bar**
+
+- Make sure the bookmark bar is visible (see Step 1 above)
+- Try dragging the bookmarklet link again from `dist/duckduckgo.html`
+
+**Modal doesn't appear**
+
+- Check your browser's console for errors (F12 → Console tab)
+- Ensure you're on a Google search results page, not just google.com
+- Try refreshing the page and clicking the bookmarklet again
 
 ## Supported Search Engines
 

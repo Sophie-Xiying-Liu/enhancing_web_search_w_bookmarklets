@@ -2,6 +2,7 @@
   "name": "enhanceing-web-search-w-bookmarklets",
   "version": "1.0.0",
   "description": "Bookmarklets to redirect Google search queries to alternative search engines",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "build": "node build.js",
@@ -19,6 +20,7 @@
   "author": "Sophie-Xiying-Liu",
   "license": "MIT",
   "devDependencies": {
+    "esbuild": "^0.27.2",
     "eslint": "^9.39.2",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.7",

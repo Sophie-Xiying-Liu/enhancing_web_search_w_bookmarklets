@@ -1,0 +1,46 @@
+{
+  "name": "enhanceing-web-search-w-bookmarklets",
+  "version": "1.0.0",
+  "description": "Bookmarklets to redirect Google search queries to alternative search engines",
+  "main": "index.js",
+  "scripts": {
+    "build": "node build.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier --write \"**/*.{js,json,md}\"",
+    "lint": "eslint src/**/*.js bookmarklets/**/*.js",
+    "prepare": "husky"
+  },
+  "keywords": [
+    "bookmarklet",
+    "search-engine",
+    "google",
+    "duckduckgo"
+  ],
+  "author": "Sophie-Xiying-Liu",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^9.39.2",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
+    "prettier": "^3.7.4"
+  },
+  "lint-staged": {
+    "*.{js,json,md}": [
+      "prettier --write"
+    ],
+    "*.js": [
+      "eslint --fix"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sophie-Xiying-Liu/enhanceing_web_search_w_bookmarklets.git"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "bugs": {
+    "url": "https://github.com/Sophie-Xiying-Liu/enhanceing_web_search_w_bookmarklets/issues"
+  },
+  "homepage": "https://github.com/Sophie-Xiying-Liu/enhanceing_web_search_w_bookmarklets#readme"
+}

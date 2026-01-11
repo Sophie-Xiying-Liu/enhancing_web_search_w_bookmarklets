@@ -34,13 +34,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Sophie-Xiying-Liu/enhanceing_web_search_w_bookmarklets.git"
+    "url": "git+https://github.com/Sophie-Xiying-Liu/enhancing_web_search_w_bookmarklets.git"
   },
   "directories": {
     "test": "test"
   },
   "bugs": {
-    "url": "https://github.com/Sophie-Xiying-Liu/enhanceing_web_search_w_bookmarklets/issues"
+    "url": "https://github.com/Sophie-Xiying-Liu/enhancing_web_search_w_bookmarklets/issues"
   },
-  "homepage": "https://github.com/Sophie-Xiying-Liu/enhanceing_web_search_w_bookmarklets#readme"
+  "homepage": "https://github.com/Sophie-Xiying-Liu/enhancing_web_search_w_bookmarklets#readme"
 }
